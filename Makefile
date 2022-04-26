@@ -1,7 +1,7 @@
 CC := cc
 OUT := out
 FLAGS = -Ofast -pipe
-all: create ls cat mkdir true false whoami uname
+all: create ls cat mkdir true false whoami uname yes
 create:
 	mkdir -p $(OUT)
 ls:
@@ -18,3 +18,5 @@ whoami:
 	$(CC) $(FLAGS) whoami.c -o $(OUT)/whoami
 uname:
 	$(CC) $(FLAGS) uname.c -o $(OUT)/uname
+yes:
+	$(CC) $(FLAGS) yes.c -o $(OUT)/yes
