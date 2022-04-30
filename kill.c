@@ -1,6 +1,7 @@
 #include <stdio.h>
-#include <signal.h>
 #include <stdlib.h>
+#include <syscall.h>
+#include <unistd.h>
 
 int main(int argc, char* argv[]) {
 	if(argc < 2) {
@@ -11,7 +12,7 @@ int main(int argc, char* argv[]) {
 	for(int i = 1; i < argc; i++) {
 		if(atoi(argv[i]));
 		else goto error;
-		if(kill(atoi(argv[i]), 15)) 
+		if(syscall(SYS_kill, atoi(argv[i]), 15)) 
 			perror("error");
 		else 
 			printf("%i killed\n", atoi(argv[i]));
