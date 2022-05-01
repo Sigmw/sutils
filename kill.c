@@ -10,10 +10,7 @@ int main(int argc, char *argv[]) {
     exit(1);
   }
   for (int i = 1; i < argc; i++) {
-    if (atoi(argv[i]))
-      ;
-    else
-      goto error;
+    if (!(atoi(argv[i]))) goto error;
     if (syscall(SYS_kill, atoi(argv[i]), 15))
       perror("error");
     else

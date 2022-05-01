@@ -1,7 +1,7 @@
 CC := cc
 OUT := out
 FLAGS = -Ofast -pipe
-all: create ls cat mkdir true false whoami uname yes kill echo
+all: create ls cat mkdir true false whoami uname yes kill echo sleep
 create:
 	mkdir -p $(OUT)
 ls:
@@ -24,3 +24,5 @@ kill:
 	$(CC) $(FLAGS) kill.c -o $(OUT)/kill
 echo:
 	$(CC) $(FLAGS) echo.c -o $(OUT)/echo
+sleep:
+	$(CC) $(FLAGS) sleep.c -o $(OUT)/sleep
