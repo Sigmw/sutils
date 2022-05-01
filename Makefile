@@ -1,7 +1,7 @@
 CC := cc
 OUT := out
 CFLAGS = -Ofast -pipe
-all: create ls cat mkdir true false whoami uname yes kill echo sleep pwd
+all: create ls cat mkdir true false whoami uname yes kill echo sleep pwd hostname
 create:
 	mkdir -p $(OUT)
 ls:
@@ -28,3 +28,5 @@ sleep:
 	$(CC) $(CFLAGS) sleep.c -o $(OUT)/sleep
 pwd:
 	$(CC) $(CFLAGS) pwd.c -o $(OUT)/pwd
+hostname:
+	$(CC) $(CFLAGS) hostname.c -o $(OUT)/hostname
