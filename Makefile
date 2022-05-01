@@ -1,28 +1,30 @@
 CC := cc
 OUT := out
-FLAGS = -Ofast -pipe
-all: create ls cat mkdir true false whoami uname yes kill echo sleep
+CFLAGS = -Ofast -pipe
+all: create ls cat mkdir true false whoami uname yes kill echo sleep pwd
 create:
 	mkdir -p $(OUT)
 ls:
-	$(CC) $(FLAGS) ls.c -o  $(OUT)/ls
+	$(CC) $(CFLAGS) ls.c -o  $(OUT)/ls
 cat:
-	$(CC) $(FLAGS) cat.c -o $(OUT)/cat
+	$(CC) $(CFLAGS) cat.c -o $(OUT)/cat
 mkdir:
-	$(CC) $(FLAGS) mkdir.c -o $(OUT)/mkdir
+	$(CC) $(CFLAGS) mkdir.c -o $(OUT)/mkdir
 true:
-	$(CC) $(FLAGS) true.c -o $(OUT)/true
+	$(CC) $(CFLAGS) true.c -o $(OUT)/true
 false:
-	$(CC) $(FLAGS) false.c -o $(OUT)/false
+	$(CC) $(CFLAGS) false.c -o $(OUT)/false
 whoami:
-	$(CC) $(FLAGS) whoami.c -o $(OUT)/whoami
+	$(CC) $(CFLAGS) whoami.c -o $(OUT)/whoami
 uname:
-	$(CC) $(FLAGS) uname.c -o $(OUT)/uname
+	$(CC) $(CFLAGS) uname.c -o $(OUT)/uname
 yes:
-	$(CC) $(FLAGS) yes.c -o $(OUT)/yes
+	$(CC) $(CFLAGS) yes.c -o $(OUT)/yes
 kill:
-	$(CC) $(FLAGS) kill.c -o $(OUT)/kill
+	$(CC) $(CFLAGS) kill.c -o $(OUT)/kill
 echo:
-	$(CC) $(FLAGS) echo.c -o $(OUT)/echo
+	$(CC) $(CFLAGS) echo.c -o $(OUT)/echo
 sleep:
-	$(CC) $(FLAGS) sleep.c -o $(OUT)/sleep
+	$(CC) $(CFLAGS) sleep.c -o $(OUT)/sleep
+pwd:
+	$(CC) $(CFLAGS) pwd.c -o $(OUT)/pwd
